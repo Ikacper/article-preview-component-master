@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+  --white: rgb(255, 255, 255);
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Light-Grayish-Blue);
+}
+
+.card {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 75%;
+  max-width: 475px;
+  border-radius: 10px;
+}
+
+.card::before {
+  content: "";
+  background: url(./images/drawers.jpg) top no-repeat;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.card-wrapper {
+  position: relative;
+}
+
+.card__paragraph {
+  color: var(--Desaturated-Dark-Blue);
+  padding: 0.5rem 2rem 1rem 2rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.card__paragraph--bold {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-weight: bold;
+  font-size: 1.05rem;
+  padding-top: 2rem;
+}
+
+.card__hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 2rem;
+}
+
+.hero__img {
+  border-radius: 50%;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0.2rem 0.5rem;
+}
+
+.hero--bold {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-weight: bold;
+}
+
+.hero--smaller {
+  color: var(--Desaturated-Dark-Blue);
+  font-size: 0.8rem;
+}
+
+.card__btn {
+  background: url(./images/icon-share.svg) center no-repeat;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--Light-Grayish-Blue);
+  margin-left: auto;
+}
+
+.card__btn:hover {
+  cursor: pointer;
+}
+
+.card__social-media {
+  display: none;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  align-items: center;
+}
+
+.social-media--active {
+  display: flex;
+}
+
+.social-media__share-text {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  height: 70px;
+  padding: 1.5rem 1rem 1.5rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--Grayish-Blue);
+}
+
+.social-media__share-text::after {
+  content: "";
+  background: url(./images/icon-facebook.svg) 20px 1px no-repeat,
+    url(./images/icon-twitter.svg) 60px 2px no-repeat,
+    url(./images/icon-pinterest.svg) 100px 1px no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.social-media__btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--Desaturated-Dark-Blue);
+  margin-left: auto;
+  margin-right: 2rem;
+  position: relative;
+}
+
+.social-media__btn::before {
+  content: "";
+  background: url(./images/icon-share.svg) center no-repeat;
+  filter: brightness(0) invert(1);
+  background-size: cover;
+  width: 15px;
+  height: 13px;
+  position: absolute;
+  top: 9px;
+  right: 7px;
+}
+
+.social-media__btn:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  .card {
+    flex-direction: row;
+    height: auto;
+    min-width: 750px;
+    max-width: 750px;
+    width: 70%;
+  }
+  .card::before {
+    background: url(./images/drawers.jpg) left no-repeat;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+  }
+
+  .card__hero {
+    padding: 0.75rem 3rem 2rem 3rem;
+    position: relative;
+  }
+
+  .card__social-media {
+    left: 270px;
+    bottom: 100px;
+    height: 48px;
+    width: 240px;
+    border-radius: 10px;
+  }
+
+  .card__paragraph {
+    padding: 0.5rem 3rem 1rem 3rem;
+  }
+
+  .card__paragraph--bold {
+    padding-top: 2rem;
+  }
+
+  .social-media--active {
+    display: flex;
+    align-items: center;
+  }
+
+  .social-media__btn {
+    position: absolute;
+  }
+  .social-media__btn {
+    display: none;
+  }
+
+  .arrow {
+    background-color: var(--Very-Dark-Grayish-Blue);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 38px;
+    left: 102px;
+  }
+
+  .btn--active {
+    background-color: var(--Desaturated-Dark-Blue);
+  }
+  .btn--active::before {
+    content: "";
+    background: url(./images/icon-share.svg) center no-repeat;
+    filter: brightness(0) invert(1);
+    background-size: cover;
+    width: 15px;
+    height: 13px;
+    position: absolute;
+    top: 28px;
+    right: 56px;
+  }
+}
