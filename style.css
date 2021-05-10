@@ -31,6 +31,7 @@ body {
   height: 75%;
   max-width: 475px;
   border-radius: 10px;
+  box-shadow: 7px 11px 50px -7px rgba(0, 0, 0, 0.23);
 }
 
 .card::before {
@@ -58,7 +59,7 @@ body {
 .card__paragraph--bold {
   color: var(--Very-Dark-Grayish-Blue);
   font-weight: bold;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   padding-top: 2rem;
 }
 
@@ -177,6 +178,7 @@ body {
   }
   .card::before {
     background: url(./images/drawers.jpg) left no-repeat;
+    background-size: cover;
     border-top-right-radius: 0;
     border-bottom-left-radius: 10px;
   }
